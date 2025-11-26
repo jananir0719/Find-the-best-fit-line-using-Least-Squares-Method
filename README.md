@@ -58,8 +58,9 @@ plt.plot(X,y_predicted,color='red')
 plt.show() 
 
 ## Output:
+<img width="1052" height="739" alt="image" src="https://github.com/user-attachments/assets/81f994f6-0984-4bdb-8eac-0eee9bf5c0c4" />
 
-<img width="1054" height="731" alt="Screenshot 2025-11-26 134139" src="https://github.com/user-attachments/assets/a78ccafe-a112-459d-bcb9-0e3fd3189e10" />
+
 
 
 ## Result:
