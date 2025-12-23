@@ -21,39 +21,35 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by: JANANI R
 RegisterNumber:  25018734
 */
-import numpy as np 
-import matplotlib.pyplot as plt 
- 
-# Preprocessing Input data 
- 
-X = np.array([1,2,3,4,5,6,7,8,9,10]) 
-Y = np.array([0,3,5,7,9,11,13,2,4,8]) 
- 
-# Mean 
-X_mean =np.mean(X) 
-Y_mean=np.mean(Y) 
-num=0  #for slope 
-denom=0  #for slope 
- 
-#to find sum of (xi-x') & (yi-y') & (xi-x')^2 
-for i in range(len(X)): 
-    num+=(X[i] -X_mean)*(Y[i]-Y_mean) 
-    denom+= (X[i]-X_mean)**2 
-     
-#calculate slope 
-m=num/denom 
- 
-#calculate intercept 
-b=Y_mean-m*X_mean 
- 
-print(m,b) 
-#Line equation 
-y_predicted=m*X+b 
-print(y_predicted) 
-#to plot graph 
-plt.scatter(X,Y) 
-plt.plot(X,y_predicted,color='red') 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample dataset (Univariate)
+x = np.array([1, 2, 3, 4, 5])     # Input feature
+y = np.array([2, 4, 5, 4, 5])     # Target values
+
+# Number of observations
+n = len(x)
+
+# Calculate slope (m) and intercept (c)
+m = (n * np.sum(x * y) - np.sum(x) * np.sum(y)) / (n * np.sum(x ** 2) - (np.sum(x)) ** 2)
+c = (np.sum(y) - m * np.sum(x)) / n
+
+print(f"Slope (m): {m}")
+print(f"Intercept (c): {c}")
+
+# Predict y values
+y_pred = m * x + c
+
+# Plot the data points and regression line
+plt.scatter(x, y, color='blue', label='Actual data')
+plt.plot(x, y_pred, color='red', label='Fitted line')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Univariate Linear Regression using Least Squares')
+plt.legend()
 plt.show()
+
 
 ```
 
