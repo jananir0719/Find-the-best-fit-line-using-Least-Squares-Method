@@ -50,7 +50,6 @@ plt.title('Univariate Linear Regression using Least Squares')
 plt.legend()
 plt.show()
 
-
 ```
 
 ## Output:
